@@ -1,0 +1,213 @@
+{
+  "info": {
+    "_postman_id": "b3e09d17-91a5-48fa-a107-7d6f5db28b9e",
+    "name": "Backend Tutorial - Node & Express CRUD APIs",
+    "description": "Postman API collection for testing User Authentication and Post CRUD operations taught in the freeCodeCamp Intro to Backend Development tutorial.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:5000",
+      "type": "string"
+    },
+    {
+      "key": "post_id",
+      "value": "PASTE_POST_ID_HERE",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Server Status",
+      "item": [
+        {
+          "name": "Health Check / Welcome",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/",
+              "host": ["{{base_url}}"],
+              "path": [""]
+            },
+            "description": "Verifies that the Express server is up and returns available API routes."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User Authentication APIs",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"coder123\",\n  \"email\": \"coder123@example.com\",\n  \"password\": \"secretPass123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/register",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "register"]
+            },
+            "description": "Registers a new user and hashes the password before saving to MongoDB."
+          },
+          "response": []
+        },
+        {
+          "name": "Login User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"coder123@example.com\",\n  \"password\": \"secretPass123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/login",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "login"]
+            },
+            "description": "Verifies credentials against MongoDB and returns user profile."
+          },
+          "response": []
+        },
+        {
+          "name": "Logout User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/users/logout",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "logout"]
+            },
+            "description": "Logs out the user."
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/users",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users"]
+            },
+            "description": "Fetches all registered users with passwords excluded."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Post CRUD APIs",
+      "item": [
+        {
+          "name": "1. Create Post (CREATE)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Getting Started with Node and Express\",\n  \"content\": \"Building full CRUD REST APIs with MongoDB Atlas and Mongoose.\",\n  \"author\": \"coder123\",\n  \"category\": \"Web Development\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/posts",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts"]
+            },
+            "description": "Creates a new post document in MongoDB."
+          },
+          "response": []
+        },
+        {
+          "name": "2. Get All Posts (READ ALL)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/posts",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts"]
+            },
+            "description": "Retrieves all posts sorted newest to oldest."
+          },
+          "response": []
+        },
+        {
+          "name": "3. Get Single Post by ID (READ ONE)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/posts/{{post_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts", "{{post_id}}"]
+            },
+            "description": "Retrieves a single post by MongoDB _id."
+          },
+          "response": []
+        },
+        {
+          "name": "4. Update Post by ID (UPDATE)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Mastering Backend APIs with Node & Express\",\n  \"content\": \"Updated content! Successfully verified full CRUD operations.\",\n  \"category\": \"Backend Mastery\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/posts/{{post_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts", "{{post_id}}"]
+            },
+            "description": "Updates an existing post by its ID."
+          },
+          "response": []
+        },
+        {
+          "name": "5. Delete Post by ID (DELETE)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/posts/{{post_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts", "{{post_id}}"]
+            },
+            "description": "Deletes a post by its ID from MongoDB."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
