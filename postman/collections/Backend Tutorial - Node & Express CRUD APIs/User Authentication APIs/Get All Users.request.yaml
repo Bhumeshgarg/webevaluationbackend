@@ -1,0 +1,5 @@
+$kind: http-request
+description: Fetches all registered users with passwords excluded.
+url: "{{base_url}}/api/users"
+method: GET
+order: 4000

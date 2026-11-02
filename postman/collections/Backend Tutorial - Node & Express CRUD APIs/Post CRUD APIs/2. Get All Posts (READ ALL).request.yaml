@@ -1,0 +1,5 @@
+$kind: http-request
+description: Retrieves all posts sorted newest to oldest.
+url: "{{base_url}}/api/posts"
+method: GET
+order: 2000

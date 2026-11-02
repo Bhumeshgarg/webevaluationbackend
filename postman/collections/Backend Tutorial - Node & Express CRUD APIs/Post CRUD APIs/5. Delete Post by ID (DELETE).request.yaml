@@ -1,0 +1,5 @@
+$kind: http-request
+description: Deletes a post by its ID from MongoDB.
+url: "{{base_url}}/api/posts/{{post_id}}"
+method: DELETE
+order: 5000

@@ -1,0 +1,15 @@
+$kind: http-request
+description: Registers a new user and hashes the password before saving to MongoDB.
+url: "{{base_url}}/api/users/register"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "username": "coder123",
+      "email": "coder123@example.com",
+      "password": "secretPass123"
+    }
+order: 1000

@@ -1,0 +1,15 @@
+$kind: http-request
+description: Updates an existing post by its ID.
+url: "{{base_url}}/api/posts/{{post_id}}"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "title": "Mastering Backend APIs with Node & Express",
+      "content": "Updated content! Successfully verified full CRUD operations.",
+      "category": "Backend Mastery"
+    }
+order: 4000

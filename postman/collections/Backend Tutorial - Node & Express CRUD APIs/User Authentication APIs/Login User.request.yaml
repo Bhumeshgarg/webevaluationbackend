@@ -1,0 +1,14 @@
+$kind: http-request
+description: Verifies credentials against MongoDB and returns user profile.
+url: "{{base_url}}/api/users/login"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "email": "coder123@example.com",
+      "password": "secretPass123"
+    }
+order: 2000

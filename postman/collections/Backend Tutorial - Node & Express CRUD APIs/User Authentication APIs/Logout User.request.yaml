@@ -1,0 +1,5 @@
+$kind: http-request
+description: Logs out the user.
+url: "{{base_url}}/api/users/logout"
+method: POST
+order: 3000

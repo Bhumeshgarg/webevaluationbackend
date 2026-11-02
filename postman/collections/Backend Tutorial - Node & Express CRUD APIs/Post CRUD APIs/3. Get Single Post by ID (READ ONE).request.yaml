@@ -1,0 +1,5 @@
+$kind: http-request
+description: Retrieves a single post by MongoDB _id.
+url: "{{base_url}}/api/posts/{{post_id}}"
+method: GET
+order: 3000

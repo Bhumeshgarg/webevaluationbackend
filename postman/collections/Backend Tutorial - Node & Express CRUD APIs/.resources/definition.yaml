@@ -1,0 +1,5 @@
+$kind: collection
+description: Postman API collection for testing User Authentication and Post CRUD operations taught in the freeCodeCamp Intro to Backend Development tutorial.
+variables:
+  base_url: http://localhost:5000
+  post_id: PASTE_POST_ID_HERE

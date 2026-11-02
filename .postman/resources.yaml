@@ -1,0 +1,11 @@
+# Use this workspace to collaborate
+workspace:
+  id: c91ede53-b283-4fd4-86f9-f0629d28bd30
+
+localResources:
+  collections:
+    - ../postman_collection.json
+
+cloudResources:
+  collections:
+    ../postman/collections/Backend Tutorial - Node & Express CRUD APIs: 35eff785-efda-4cfa-bff7-eec2eb0b33b6

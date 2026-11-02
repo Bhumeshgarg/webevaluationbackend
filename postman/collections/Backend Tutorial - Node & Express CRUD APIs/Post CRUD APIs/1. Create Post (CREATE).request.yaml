@@ -1,0 +1,16 @@
+$kind: http-request
+description: Creates a new post document in MongoDB.
+url: "{{base_url}}/api/posts"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "title": "Getting Started with Node and Express",
+      "content": "Building full CRUD REST APIs with MongoDB Atlas and Mongoose.",
+      "author": "coder123",
+      "category": "Web Development"
+    }
+order: 1000
