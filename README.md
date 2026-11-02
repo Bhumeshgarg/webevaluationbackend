@@ -304,20 +304,3 @@ Once running, your terminal will display:
 ```
 
 ---
-
-## 📋 Evaluation & Submission Checklist
-
-For your **3rd Evaluation**, follow this checklist before presenting your project:
-
-- [x] **Project Repository:** Clean Git commit history, `.gitignore` configured, pushed to a public GitHub repo.
-- [x] **MongoDB Atlas:** Cluster active, database user created, IP access set to `0.0.0.0/0`, connection string in `.env`.
-- [x] **Database Models:** Mongoose schemas created for `User` and `Post` with validation.
-- [x] **Password Hashing:** `bcryptjs` used to securely hash passwords before storing in MongoDB.
-- [x] **CRUD APIs:**
-  - `POST /api/posts` (Create)
-  - `GET /api/posts` (Read All)
-  - `GET /api/posts/:id` (Read Single)
-  - `PUT /api/posts/:id` (Update)
-  - `DELETE /api/posts/:id` (Delete)
-- [x] **Live Demonstration:** Server running locally via `npm run dev` and responding to live Postman requests on laptop.
-- [x] **Submission URL:** Submit your public GitHub repository link (`https://github.com/<username>/<repo>`).
